@@ -45,7 +45,7 @@ class ServerResponse(ServerCreate):
 
 Base.metadata.create_all(engine)
 
-
+# Can seed the database with initial/permanent server data if needed
 def seed_servers() -> None:
     """Seed the database with initial server data if it's empty."""
     with Session(engine) as session:

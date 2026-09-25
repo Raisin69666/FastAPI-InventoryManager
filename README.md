@@ -2,6 +2,8 @@
 
 A lightweight IT server inventory application built with FastAPI. The application provides a Bootstrap-based web interface and a JSON API for creating, viewing, editing, and deleting server records. Data is stored locally in SQLite through SQLAlchemy.
 
+This is meant to be a simple example of what can be done with this type of setup. It is meant to be highly flexible and expandable. 
+
 ## Technologies
 
 - FastAPI
@@ -38,14 +40,40 @@ source .venv/bin/activate
 
 ### 3. Install the dependencies
 
+Choose either `pip` or `uv`.
+
+#### Using pip
+
 ```bash
 pip install -r requirements.txt
 ```
 
+#### Using uv
+
+If the virtual environment has not been created yet, `uv` can create it for you:
+
+```bash
+uv venv
+```
+
+Install the dependencies with:
+
+```bash
+uv pip install -r requirements.txt
+```
+
 ### 4. Launch the application
+
+#### Using pip
 
 ```bash
 uvicorn main:app --reload
+```
+
+#### Using uv
+
+```bash
+uv run uvicorn main:app --reload
 ```
 
 Open [http://127.0.0.1:8000](http://127.0.0.1:8000) in a browser. The SQLite database file, `inventory.db`, and its initial example records are created automatically when the application starts.
